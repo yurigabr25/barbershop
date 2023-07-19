@@ -1,0 +1,3 @@
+INSERT INTO tb_service (name, value_service, description) VALUES ('Corte de cabelo', 30.00, 'Serviço de corte de cabelo, preço válido para cortes com máquina e tesoura.');
+INSERT INTO tb_service (name, value_service, description) VALUES ('Corte de barba', 10.00, 'Serviço de barba, preço válido para todo tipo de corte');
+INSERT INTO tb_service (name, value_service, description) VALUES ('Unha', 20.00, 'Serviço de unha, preço válido para aparar e pintar unha');

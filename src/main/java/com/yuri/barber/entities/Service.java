@@ -3,6 +3,7 @@ package com.yuri.barber.entities;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,18 +17,23 @@ public class Service {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private BigDecimal hair;
-	private BigDecimal beard;
-	private BigDecimal nail;
+	private String name;
+	
+	@Column(name = "value_service")
+	private BigDecimal value;
+	
+	@Column(columnDefinition = "TEXT")
+	private String description;
 
 	public Service() {
 	}
 
-	public Service(Long id, BigDecimal corteCabelo, BigDecimal corteBarab, BigDecimal nail) {
+	public Service(Long id, String name, BigDecimal value, String description) {
+		super();
 		this.id = id;
-		this.hair = corteCabelo;
-		this.beard = corteBarab;
-		this.nail = nail;
+		this.name = name;
+		this.value = value;
+		this.description = description;
 	}
 
 	public Long getId() {
@@ -38,28 +44,28 @@ public class Service {
 		this.id = id;
 	}
 
-	public BigDecimal getHair() {
-		return hair;
+	public String getName() {
+		return name;
 	}
 
-	public void setHair(BigDecimal hair) {
-		this.hair = hair;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public BigDecimal getBeard() {
-		return beard;
+	public BigDecimal getValue() {
+		return value;
 	}
 
-	public void setBeard(BigDecimal beard) {
-		this.beard = beard;
+	public void setValue(BigDecimal value) {
+		this.value = value;
 	}
 
-	public BigDecimal getNail() {
-		return nail;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setNail(BigDecimal nail) {
-		this.nail = nail;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	@Override
